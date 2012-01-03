@@ -1,0 +1,62 @@
+Details for "GitHub PHP Deployer" Application
+
+This application intends to make it easier to deploy and manage PHP websites 
+from github.com by using public API of downloading branches.
+
+========= How it works? ========= 
+ - Basically, it will download the branch from github as a zip file, uncompress
+and install it as a revision into your server and make it available for deployment
+with the directory name you want. The same github.com can be used by multiple
+users, multiple branches, multiple projects and multiple names.
+
+========= How to install? ========= 
+ - Just create a directory into your PHP server and drop the 'index.php' file 
+in it. Since there are no authentication implemented for the application, i truly 
+recommend using a .htaccess file into the directory where you dropped the 'index.php'
+file, to avoid people deploy everything on your server ;-)
+
+========= How to use? ========= 
+ - There a few parameters that should be specified within query string. These 
+parameters are:
+   - These parameters are mandatory:
+     - 'owner' = The owner user name of the project at github.com [e.g.: rafaelkarst];
+     - 'project' = The project name at github.com [e.g.: archiveclipboard-web];
+     - 'branch' = The branch name, [e.g.: master];
+   - This parameter is mandatory only to enable deployment:
+     - $name = The name of the directory you want to deploy a revision [e.g.: test];
+   - This parameter is used only to programmatically deploy a revision;
+     - 'revision' = the name of the revision at github.com [e.g.: rafaelkarst-archiveclipboard-web-6775b86]
+ - Normally you'll need to specify only the following parameters to get
+   "GitHup PHP Deployer" running:
+     - 'owner' = The owner user name of the project at github.com [e.g.: rafaelkarst];
+     - 'project' = The project name at github.com [e.g.: archiveclipboard-web];
+     - 'branch' = The branch name, [e.g.: master];
+     - $name = The name of the directory you want to deploy a revision [e.g.: test];
+ - The other functionalities are part of the application itself;
+
+========= Examples ========= 
+ - Import the latest revision from github.com related to the project:
+   - http://<YOUR_SERVER>/git/?project=archiveclipboard-web&branch=master&owner=rafaelkarst&name=test [GitHub PHP Deployer Default Page for project]
+   - http://<YOUR_SERVER>/git/archiveclipboard-web/master/test/ [After deployment of revision, it will become available here]
+   - https://github.com/rafaelkarst/archiveclipboard-web [this is where "GitHub PHP Deployer" will import branch];
+
+========= Contact ========= 
+Name: Rafael Karst
+User: rafaelkarst [github]
+Mail: rafaelkarst@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Created by Rafael Karst (rafaelkarst@gmail.com)
